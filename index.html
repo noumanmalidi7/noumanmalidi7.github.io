@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nouman Malidi — Portfolio</title>
+<meta name="description" content="Portfolio data de Nouman Malidi Mlimi : Data Scientist / Data Analyst, certifié RNCP CDSD niveau 6 (Jedha). Projets Machine Learning, Deep Learning, Big Data, MLOps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE personal site for recruiters: confident, warm, precise
+   IDEA a teacher's progression chart: the learner's curve climbing step by step, here his own climb through the 6 certification blocks
+   PICTURE large stepped mass climbing to the right, one step per block with its project, summit = first data job
+   COLOUR Mayotte lagoon: deep lagoon ground, turquoise support, coral accent; white sections below
+   TYPE Sora 700 for titles, Inter for text
+   LAYOUT laptop: name and pitch across the top, curve full width beneath; phone: title, curve, buttons */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0a1f27);--ink:light-dark(#0e2a33,#e8f4f5);--soft:light-dark(#4a6670,#9fbcc3);--line:light-dark(#d8e6e8,#1e3a44);--card:light-dark(#f3f9f9,#102a33);--lagoon:#0b3d4c;--lagoon2:#0f5566;--turq:#3cc4c8;--coral:#ff7a59;--onl:#eaf8f8}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(36px,5vw,72px) max(5vw,16px)}
+[data-lang=fr] [lang=en],[data-lang=en] [lang=fr]{display:none}
+.nav{position:sticky;top:0;z-index:10;background:var(--lagoon);color:var(--onl);padding:10px max(5vw,16px)}
+.nav .wrap{display:flex;align-items:center;gap:8px 20px;flex-wrap:wrap}
+.brand{font-family:Sora,sans-serif;font-weight:700;text-decoration:none;margin-right:auto}
+.nav a.l{text-decoration:none;opacity:.85;font-size:15px;padding:8px 2px}
+.nav a.l:hover{opacity:1;text-decoration:underline}
+.lang{display:flex;border:1px solid #ffffff55;border-radius:999px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;padding:6px 12px;font-size:14px;font-weight:600;min-height:32px;display:flex;align-items:center}
+.lang button[aria-pressed=true]{background:var(--turq);color:var(--lagoon)}
+.lang button:focus-visible{outline:2px solid var(--coral)}
+.hero{background:var(--lagoon);color:var(--onl);padding-bottom:0}
+.top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.hero h1{font-size:clamp(36px,5.4vw,60px)}
+.role{font-size:clamp(18px,2vw,22px);color:var(--turq);font-weight:600;margin:10px 0 0}
+.pitch{margin:0;color:#cfe7ea;max-width:60ch}
+.avail{display:grid;gap:8px;margin:0;padding:0;list-style:none;font-size:15px}
+.avail li{display:flex;gap:10px;align-items:baseline}
+.avail b{color:var(--onl);white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--coral);flex:none;transform:translateY(-1px)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;font-weight:600;text-decoration:none;border:1.5px solid var(--turq)}
+.btn.p{background:var(--coral);border-color:var(--coral);color:#2a0f06}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible{outline:3px solid var(--onl);outline-offset:2px}
+.fig{position:relative;height:clamp(300px,36vw,420px);margin-top:28px}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.fig text{font:600 13px Inter,sans-serif}
+h2{font-size:clamp(30px,3.6vw,42px)}
+.lead{color:var(--soft);max-width:68ch;margin:10px 0 0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 22px}
+.filters button{font:500 15px Inter,sans-serif;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--lagoon);color:var(--onl);border-color:var(--lagoon)}
+.filters button:focus-visible{outline:2px solid var(--coral)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.card .blk{font-size:13px;color:var(--soft);font-weight:600}
+.card h3{font-size:20px}
+.card p{margin:0;font-size:15px;color:var(--soft)}
+.metric{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;margin:4px 0}
+.metric span{flex:1 1 11em}
+.metric strong{font-family:Sora,sans-serif;font-size:32px;color:light-dark(#0f5566,#3cc4c8);white-space:nowrap}
+.metric span{font-size:14px;color:var(--soft)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tags span{font-size:13px;padding:3px 9px;border-radius:6px;background:light-dark(#e2f0f1,#173842)}
+.links{display:flex;gap:16px;flex-wrap:wrap;font-weight:600;font-size:15px}
+.links a{color:light-dark(#b8431f,#ff9a7d);text-decoration:none;padding:6px 0}
+.links a:hover{text-decoration:underline}
+.skills{background:var(--card);border-block:1px solid var(--line)}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px 36px;margin-top:28px}
+.sk h3{font-size:17px;margin-bottom:10px;color:light-dark(#0f5566,#3cc4c8)}
+.sk ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.sk li{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:5px 11px;font-size:15px}
+.path{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;margin-top:28px}
+.tl{list-style:none;margin:0;padding:0;border-left:3px solid var(--turq)}
+.tl li{position:relative;padding:0 0 22px 22px}
+.tl li::before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--turq)}
+.tl li.goal::before{background:var(--coral);border-color:var(--coral)}
+.tl .d{font-weight:700;font-family:Sora,sans-serif;white-space:nowrap}
+.tl p{margin:2px 0 0;color:var(--soft);font-size:15px}
+.edge{background:var(--lagoon);color:var(--onl);border-radius:16px;padding:24px}
+.edge h3{font-size:22px;margin-bottom:12px}
+.edge ul{margin:0;padding-left:20px;display:grid;gap:10px;color:#d4ecee}
+.edge b{color:var(--onl)}
+.contact{background:var(--lagoon);color:var(--onl)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.contact p{color:#cfe7ea;margin:10px 0 0}
+.cl{display:grid;gap:10px;font-size:16px}
+.cl a{color:var(--onl)}
+.mail{font-weight:600;overflow-wrap:anywhere}
+footer{padding:18px max(5vw,16px);font-size:13px;color:var(--soft)}
+@media(max-width:860px){.top,.path,.contact .wrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.nav a.l{display:none}.fig{height:300px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fig *{animation:none!important;transition:none!important}}
+.grow{transform-box:fill-box;transform-origin:bottom;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Navigation"><div class="wrap">
+  <a class="brand" href="#top">Nouman Malidi</a>
+  <a class="l" href="#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a>
+  <a class="l" href="#competences"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
+  <a class="l" href="#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
+  <a class="l" href="#contact">Contact</a>
+  <div class="lang" role="group" aria-label="Langue / Language">
+    <button id="b-fr" aria-pressed="true">FR</button><button id="b-en" aria-pressed="false">EN</button>
+  </div>
+</div></nav>
+
+<header class="band hero" id="top"><div class="wrap">
+  <div class="top">
+    <div>
+      <h1>Nouman Malidi Mlimi</h1>
+      <p class="role">Data Scientist · Data Analyst · ML Engineer</p>
+      <p class="pitch" style="margin-top:16px">
+        <span lang="fr">Ancien professeur d'anglais devenu data scientist, certifié <b>RNCP niveau 6 Concepteur Développeur en Science des Données</b> (Jedha, 2026). Je transforme des données en décisions claires, et je sais les expliquer à tout le monde.</span>
+        <span lang="en">English teacher turned data scientist, certified <b>Data Science Designer-Developer (French RNCP level 6, Bac+3/4)</b> at Jedha in 2026. I turn data into clear decisions, and I know how to explain them to anyone.</span>
+      </p>
+      <div class="btns">
+        <a class="btn p" href="#projets"><span lang="fr">Voir les projets</span><span lang="en">See projects</span></a>
+        <a class="btn" href="https://github.com/noumanmalidi7">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/nouman-malidi-a99276326/">LinkedIn</a>
+      </div>
+    </div>
+    <ul class="avail">
+      <li><i class="dot"></i><span><b lang="fr">Freelance :</b><b lang="en">Freelance:</b> <span lang="fr">disponible dès maintenant, à temps partiel</span><span lang="en">available now, part-time</span></span></li>
+      <li><i class="dot"></i><span><b lang="fr">Temps plein :</b><b lang="en">Full-time:</b> <span lang="fr">à partir de juillet 2027</span><span lang="en">from July 2027</span></span></li>
+      <li><i class="dot"></i><span><b lang="fr">Lieu :</b><b lang="en">Location:</b> <span lang="fr">full remote, France métropolitaine, Mayotte, La Réunion</span><span lang="en">full remote, mainland France, Mayotte, Réunion Island</span></span></li>
+      <li><i class="dot"></i><span><b lang="fr">Langues :</b><b lang="en">Languages:</b> <span lang="fr">français, anglais bilingue (CELTA)</span><span lang="en">French, fluent English (CELTA)</span></span></li>
+    </ul>
+  </div>
+  <div class="fig" id="curve" role="img" aria-label="Courbe de progression : les 6 blocs de la certification, du pipeline de données au projet final, jusqu'au premier poste data"><svg id="cs"></svg></div>
+</div></header>
+
+<section class="band" id="projets"><div class="wrap">
+  <h2><span lang="fr">9 projets, des données brutes à l'application en ligne</span><span lang="en">9 projects, from raw data to a live app</span></h2>
+  <p class="lead"><span lang="fr">Chaque projet a été évalué par un jury de certification. Les résultats affichés sont ceux mesurés sur les jeux de test.</span><span lang="en">Each project was assessed by a certification jury. Results shown are measured on held-out test sets.</span></p>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="band skills" id="competences"><div class="wrap">
+  <h2><span lang="fr">Compétences</span><span lang="en">Skills</span></h2>
+  <div class="sk" id="sk"></div>
+</div></section>
+
+<section class="band" id="parcours"><div class="wrap">
+  <h2><span lang="fr">Du tableau noir aux tableaux de bord</span><span lang="en">From the blackboard to dashboards</span></h2>
+  <div class="path">
+    <ol class="tl" id="tl"></ol>
+    <aside class="edge">
+      <h3><span lang="fr">Ce que l'enseignement m'apporte en data</span><span lang="en">What teaching brings to my data work</span></h3>
+      <ul>
+        <li lang="fr"><b>Vulgariser</b> : expliquer un résultat complexe à un public non technique, tous les jours.</li>
+        <li lang="en"><b>Explaining</b>: making complex results clear to non-technical people, every day.</li>
+        <li lang="fr"><b>Analyser des progressions</b> : suivi des notes de mes élèves sous Excel, et un premier modèle pour prédire leur évolution.</li>
+        <li lang="en"><b>Tracking progress</b>: monitoring my students' grades in Excel, and building a first model to predict their progress.</li>
+        <li lang="fr"><b>Coordonner</b> : professeur principal chaque année, en lien avec les familles et l'équipe pédagogique.</li>
+        <li lang="en"><b>Coordinating</b>: form tutor every year, working with families and the teaching team.</li>
+        <li lang="fr"><b>Travailler en équipe sur un projet data</b> : partage de l'information, Git, respect du RGPD (projet final).</li>
+        <li lang="en"><b>Data teamwork</b>: information sharing, Git workflow, GDPR compliance (final project).</li>
+      </ul>
+    </aside>
+  </div>
+</div></section>
+
+<section class="band contact" id="contact"><div class="wrap">
+  <div>
+    <h2><span lang="fr">Travaillons ensemble</span><span lang="en">Let's work together</span></h2>
+    <p><span lang="fr">Une mission freelance, un poste en remote, à Mayotte, à La Réunion ou en métropole : écrivez-moi.</span><span lang="en">A freelance mission or a remote role: get in touch.</span></p>
+  </div>
+  <div class="cl">
+    <span class="mail">noumanmalidi@gmail.com</span>
+    <a href="https://www.linkedin.com/in/nouman-malidi-a99276326/">LinkedIn</a>
+    <a href="https://github.com/noumanmalidi7">github.com/noumanmalidi7</a>
+  </div>
+</div></section>
+<footer><div class="wrap">© 2026 Nouman Malidi Mlimi · Mayotte, France</div></footer>
+
+<script>
+{
+const P=[
+ {t:"Impact environnemental de l'alimentation",te:"Environmental impact of food",b:6,c:["ml","eng","ana"],m:"R² 0,93",me:"R² 0.93",ml:"Random Forest optimisé",mle:"tuned Random Forest",d:"Projet final en équipe : ETL multi-sources (FAOSTAT, Banque mondiale, OWID), entrepôt en schéma en étoile, prédiction des émissions de CO₂ et profils de pays (K-Means).",de:"Team capstone: multi-source ETL (FAOSTAT, World Bank, OWID), star-schema warehouse, CO₂ emission prediction and country profiles (K-Means).",s:["Python","SQL","scikit-learn","XGBoost","MLflow","Streamlit"],r:"Final-Jedha-project"},
+ {t:"Détecteur de spam AT&T",te:"AT&T spam detector",b:4,c:["dl"],m:"F1 0,95",me:"F1 0.95",ml:"DistilBERT, 2,5× moins de spams manqués",mle:"DistilBERT, 2.5× fewer missed spams",d:"Classification de SMS : régression logistique, réseau de neurones maison et DistilBERT fine-tuné, comparés sur le F1 et le coût des erreurs.",de:"SMS classification: logistic regression, custom neural network and fine-tuned DistilBERT, compared on F1 and the cost of errors.",s:["TensorFlow","Transformers","NLP","scikit-learn"],r:"AT-T"},
+ {t:"GetAround : retards et API de prix",te:"GetAround: delays & pricing API",b:5,c:["ops","ana"],m:"En ligne",me:"Live",ml:"dashboard + API déployés",mle:"dashboard + API deployed",d:"Dashboard pour fixer le délai minimal entre deux locations, et API FastAPI qui prédit le prix journalier (XGBoost).",de:"Dashboard to set the minimum delay between rentals, and a FastAPI service predicting the daily price (XGBoost).",s:["FastAPI","XGBoost","Streamlit","Hugging Face"],r:"getaround-project",demo:"https://huggingface.co/spaces/NoumanM07/getaround-dashboard",api:"https://noumanm07-getaround-api.hf.space/docs"},
+ {t:"Prédiction de conversion",te:"Conversion prediction",b:3,c:["ml"],m:"F1 0,77",me:"F1 0.77",ml:"XGBoost + seuil optimisé",mle:"XGBoost + tuned threshold",d:"285 000 sessions, 3 % de conversions : modèles optimisés par GridSearch et validation croisée stratifiée, puis optimisation du seuil de décision.",de:"285,000 sessions, 3% conversions: models tuned with GridSearch and stratified cross-validation, then decision-threshold tuning.",s:["scikit-learn","XGBoost","Pipeline"],r:"Conversion"},
+ {t:"Prévision des ventes Walmart",te:"Walmart sales forecasting",b:3,c:["ml"],m:"R² 0,97",me:"R² 0.97",ml:"Ridge régularisé",mle:"regularised Ridge",d:"Ventes hebdomadaires prédites à partir d'indicateurs économiques et de la saisonnalité, comparaison linéaire, Ridge et Lasso.",de:"Weekly sales predicted from economic indicators and seasonality, comparing linear, Ridge and Lasso models.",s:["scikit-learn","pandas","Ridge / Lasso"],r:"Walmart-sales"},
+ {t:"Zones chaudes Uber à New York",te:"Uber hot zones in New York",b:3,c:["ml"],m:"3,5 M",me:"3.5M",ml:"courses analysées · K-Means k = 8, silhouette 0,44",mle:"trips analysed · K-Means k = 8, silhouette 0.44",d:"Identifier les zones de forte demande par jour et par heure pour positionner les chauffeurs et réduire l'attente.",de:"Finding high-demand zones by day and hour to position drivers and cut waiting times.",s:["scikit-learn","Plotly","clustering"],r:"Uber"},
+ {t:"Second rendez-vous : speed dating",te:"Second date: speed dating",b:2,c:["ana"],m:"34 % vs 13 %",me:"34% vs 13%",ml:"taux de match selon les intérêts communs",mle:"match rate with vs without shared interests",d:"Analyse de 4 194 rencontres : les intérêts communs comptent bien plus que l'origine, et les préférences déclarées ne prédisent pas les choix réels.",de:"Analysis of 4,194 dates: shared interests matter far more than background, and stated preferences don't predict real choices.",s:["pandas","stats","seaborn"],r:"Tinder"},
+ {t:"Marché du jeu vidéo Steam",te:"Steam video-game market",b:2,c:["big","ana"],m:"55 691 jeux",me:"55,691 games",ml:"analysés avec PySpark",mle:"analysed with PySpark",d:"Big Data sur Databricks : genres, prix, plateformes et facteurs de popularité. La traduction en plusieurs langues ressort comme le levier le plus fort.",de:"Big Data on Databricks: genres, prices, platforms and popularity drivers. Localisation stands out as the strongest lever.",s:["PySpark","Databricks","AWS S3"],r:"Steam-games"},
+ {t:"Kayak : destinations et hôtels",te:"Kayak: destinations & hotels",b:1,c:["eng"],m:"35 villes",me:"35 cities",ml:"→ top 5 recommandé",mle:"→ recommended top 5",d:"Pipeline cloud : API météo et géocodage, spider Scrapy, Data Lake sur S3 et entrepôt PostgreSQL sur AWS RDS, puis cartes interactives des meilleures destinations.",de:"Cloud pipeline: weather and geocoding APIs, Scrapy spider, S3 data lake and PostgreSQL warehouse on AWS RDS, then interactive maps of the best destinations.",s:["Scrapy","AWS S3","AWS RDS","ETL"],r:"Kayak-bloc1"}
+];
+const F=[["all","Tous","All"],["ml","Machine Learning","Machine Learning"],["dl","Deep Learning","Deep Learning"],["ana","Analyse","Analysis"],["big","Big Data","Big Data"],["ops","Déploiement","Deployment"],["eng","Data Engineering","Data Engineering"]];
+const SK=[["Langages & data","Languages & data",["Python","SQL (MySQL, PostgreSQL)","pandas","NumPy","Excel"]],["Machine Learning","Machine Learning",["scikit-learn","XGBoost","Random Forest","K-Means / DBSCAN","Cross-validation"]],["Deep Learning & IA","Deep Learning & AI",["TensorFlow / Keras","Transformers (DistilBERT)","NLP","LLM, LangChain, RAG","Hugging Face"]],["Big Data & cloud","Big Data & cloud",["Spark / PySpark","Databricks","AWS S3, RDS","ETL","Data Lake / Warehouse"]],["MLOps & déploiement","MLOps & deployment",["MLflow","Docker","FastAPI","Streamlit","Git / GitHub"]],["Visualisation & BI","Visualisation & BI",["Power BI","Tableau","Plotly","Matplotlib / Seaborn"]]];
+const TL=[["2024","Certification CELTA · professeur d'anglais au Collège Hippocampe, Mayotte","CELTA certificate · English teacher at Collège Hippocampe, Mayotte"],["2025","Professeur au Complexe Scolaire Les Hibiscus · début du bootcamp Data Science Fullstack chez Jedha","Teacher at Complexe Scolaire Les Hibiscus · start of the Jedha Data Science Fullstack bootcamp"],["Mars 2026","Soutenance du projet final en équipe","Team capstone presented to the jury"],["2026","Certification RNCP niveau 6 Concepteur Développeur en Science des Données","Certified Data Science Designer-Developer (RNCP level 6)"],["2027","Objectif : premier poste data à temps plein (dès juillet)","Goal: first full-time data role (from July)"]];
+const root=document.documentElement;
+const L=()=>root.dataset.lang;
+const tg=(k)=>{const m={ml:"ML",dl:"DL",ana:"",big:"",ops:"",eng:""};return m[k]};
+let cur="all";
+const grid=document.getElementById('grid');
+const renderGrid=()=>{const en=L()==='en';grid.innerHTML=P.filter(p=>cur==='all'||p.c.includes(cur)).map(p=>`<article class="card"><div class="blk">${en?'Block':'Bloc'} ${p.b} · RNCP</div><h3>${en?p.te:p.t}</h3><div class="metric"><strong>${en?p.me:p.m}</strong><span>${en?p.mle:p.ml}</span></div><p>${en?p.de:p.d}</p><div class="tags">${p.s.map(s=>`<span>${s}</span>`).join('')}</div><div class="links"><a href="https://github.com/noumanmalidi7/${p.r}">${en?'Code':'Code'} →</a>${p.demo?`<a href="${p.demo}">${en?'Live demo':'Démo en ligne'} →</a>`:''}${p.api?`<a href="${p.api}">API →</a>`:''}</div></article>`).join('')};
+const fl=document.getElementById('filters');
+const renderF=()=>{const en=L()==='en';fl.innerHTML=F.map(f=>`<button data-f="${f[0]}" aria-pressed="${f[0]===cur}">${en?f[2]:f[1]}</button>`).join('')};
+fl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;cur=b.dataset.f;renderF();renderGrid()});
+const renderSk=()=>{const en=L()==='en';document.getElementById('sk').innerHTML=SK.map(g=>`<div><h3>${en?g[1]:g[0]}</h3><ul>${g[2].map(s=>`<li>${s}</li>`).join('')}</ul></div>`).join('')};
+const renderTl=()=>{const en=L()==='en';document.getElementById('tl').innerHTML=TL.map((r,i)=>`<li class="${i===TL.length-1?'goal':''}"><span class="d">${r[0]==='Mars 2026'&&en?'March 2026':r[0]}</span><p>${en?r[2]:r[1]}</p></li>`).join('')};
+const ST=[["Données","Data pipeline","Kayak"],["Analyse","Analysis","Steam · Tinder"],["Machine Learning","Machine Learning","Conversion · Uber"],["Deep Learning","Deep Learning","AT&T"],["Déploiement","Deployment","GetAround"],["Projet final","Capstone","CO₂ · R² 0,93"]];
+const COL=["#1f7f8c","#24909c","#2aa1ab","#30b1b9","#37bdc3","#5fd3d6","#ff7a59"];
+const s=document.getElementById('cs');
+let first=true;
+const draw=()=>{const W=s.clientWidth,H=s.clientHeight;if(!W||!H)return;const en=L()==='en';const n=ST.length+1;const pad=0;const gap=W<560?4:8;const sw=(W-pad*2)/n;const narrow=sw<128;const top=44;const step=(H-top-70)/(n-1);let out='';
+ for(let i=0;i<n;i++){const x=pad+i*sw;const h=70+step*i;const y=H-h;const goal=i===n-1;const w=sw-gap;
+  out+=`<g class="${first?'grow':''}" style="animation-delay:${i*90}ms"><rect x="${x}" y="${y}" width="${w}" height="${h+8}" rx="8" fill="${COL[i]}"/><rect x="${x}" y="${y}" width="${w}" height="5" rx="2.5" fill="#ffffff" opacity=".35"/>`;
+  const tx=x+(narrow?w/2:12);const an=narrow?'middle':'start';const ink=goal?'#2a0f06':'#03252e';
+  if(narrow){out+=`<text x="${tx}" y="${y+26}" text-anchor="${an}" fill="${ink}" style="font-size:15px;font-weight:700">${goal?'2027':i+1}</text>`}
+  else if(goal){out+=`<text x="${tx}" y="${y+28}" fill="${ink}" style="font-size:15px;font-weight:700">2027</text><text x="${tx}" y="${y+48}" fill="${ink}">${en?'First data':'Premier poste'}</text><text x="${tx}" y="${y+66}" fill="${ink}">${en?'job':'data'}</text>`}
+  else{const st=ST[i];out+=`<text x="${tx}" y="${y+26}" fill="${ink}" style="font-weight:700">${(en?'Block ':'Bloc ')+(i+1)}</text><text x="${tx}" y="${y+45}" fill="${ink}">${en?st[1]:st[0]}</text><text x="${tx}" y="${y+63}" fill="${ink}" style="font-weight:500;opacity:.8">${st[2].replace('0,93',en?'0.93':'0,93')}</text>`}
+  out+=`</g>`;
+ }
+ out+=`<text x="0" y="20" fill="#9fd8db" style="font-weight:500">${narrow?(en?'Learning curve: 6 blocks → first job':'Ma progression : 6 blocs → premier poste'):(en?'My learning curve: 6 certification blocks, one project each, up to a first data job':'Ma courbe de progression : 6 blocs certifiés, un projet par bloc, jusqu\'au premier poste data')}</text>`;
+ s.innerHTML=out;first=false};
+const ro=new ResizeObserver(draw);ro.observe(s);
+const setLang=(l)=>{root.dataset.lang=l;root.lang=l;document.getElementById('b-fr').setAttribute('aria-pressed',l==='fr');document.getElementById('b-en').setAttribute('aria-pressed',l==='en');try{localStorage.setItem('nm-lang',l)}catch(e){}renderF();renderGrid();renderSk();renderTl();draw()};
+document.getElementById('b-fr').addEventListener('click',()=>setLang('fr'));
+document.getElementById('b-en').addEventListener('click',()=>setLang('en'));
+let saved=null;try{saved=localStorage.getItem('nm-lang')}catch(e){}
+setLang(saved==='en'?'en':'fr');
+}
+</script>
+</body>
+</html>
